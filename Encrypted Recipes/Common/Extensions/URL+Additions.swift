@@ -1,22 +1,13 @@
 //
-//  Encrypted_RecipesApp.swift
+//  URL+Additions.swift
 //  Encrypted Recipes
 //
-//  Created by Itay Gervash on 21/11/2024.
+//  Created by Itay Gervash on 22/11/2024.
 //
 
-import SwiftUI
+import UIKit
 
-@main
-struct Encrypted_RecipesApp: App {
-    var body: some Scene {
-        WindowGroup {
-            RecipeListView()
-        }
-    }
-}
-
-extension App {
+extension URL {
     static func openSettings() {
         if let settingsUrl = URL(string: UIApplication.openSettingsURLString) {
             if UIApplication.shared.canOpenURL(settingsUrl) {
