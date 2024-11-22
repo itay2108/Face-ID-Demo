@@ -7,14 +7,10 @@
 
 extension Optional where Wrapped: Collection {
     var isNilOrEmpty: Bool {
-        return self == nil || self?.isEmpty == true
+        return self?.isEmpty ?? true
     }
 
     func ifNilOrEmpty(_ fallback: Wrapped) -> Wrapped {
-        if self.isNilOrEmpty {
-            return fallback
-        } else {
-            return self!
-        }
+        return self?.isEmpty == true ? fallback : self ?? fallback
     }
 }
